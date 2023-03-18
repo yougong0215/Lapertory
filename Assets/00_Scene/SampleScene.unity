@@ -887,6 +887,7 @@ MonoBehaviour:
   - {x: -600, y: -900, z: 0}
   - {x: 0, y: -900, z: 0}
   - {x: 600, y: -900, z: 0}
+  skillCanvas: {fileID: 2061569154}
 --- !u!1 &2061569154
 GameObject:
   m_ObjectHideFlags: 0

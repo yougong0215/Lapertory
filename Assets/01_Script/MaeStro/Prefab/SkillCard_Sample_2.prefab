@@ -420,7 +420,7 @@ GameObject:
   - component: {fileID: 696189910327491807}
   - component: {fileID: 696189910327491805}
   - component: {fileID: 696189910327491804}
-  - component: {fileID: 519975533323322117}
+  - component: {fileID: 930879338428010721}
   m_Layer: 5
   m_Name: SkillCard_Sample_2
   m_TagString: Untagged
@@ -489,7 +489,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &519975533323322117
+--- !u!114 &930879338428010721
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -498,11 +498,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 696189910327491806}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dcb58009bdac4442bc41d2c8ea0160c, type: 3}
+  m_Script: {fileID: 11500000, guid: 299ed9d67bea1424bad61a84f3c4e0e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   skillData: {fileID: 11400000, guid: b756f69c0da9b324aafe9b748bf2042e, type: 2}
   skillName: 
   skillCool: 0
   skillInfo: 
-  toMovePos: {x: 600, y: 0}
+  toMovePos: {x: 0, y: 0}

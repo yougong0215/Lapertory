@@ -15,11 +15,9 @@ public class AnimationController : MonoBehaviour
 
     public void SettingAnimation(string animation)
     {
+        _playerAnimatior?.SetBool(currentAnimation, false);
         currentAnimation = animation;
         _playerAnimatior.SetBool(currentAnimation, true);
     }
-    public void DeAccesAnimation(string animation)
-    {
-        _playerAnimatior?.SetBool(currentAnimation, false);
-    }
+    
 }

@@ -40,8 +40,5 @@ public class AnimationSelecter : MonoBehaviour
     {
         _animationController.SettingAnimation(_aniDic[anima]);
     }
-    public void UnLockAnimation(animationMenu anim)
-    {
-        _animationController.DeAccesAnimation(_aniDic[anim]);
-    }
+    
 }

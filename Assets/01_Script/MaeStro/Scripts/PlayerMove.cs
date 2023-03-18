@@ -69,7 +69,7 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            AnimationSelecter.animationSelecter.UnLockAnimation(animationMenu.Walk);
+            AnimationSelecter.animationSelecter.AccesAnimation(animationMenu.Idle);
         }
     }
     void FixedUpdate()

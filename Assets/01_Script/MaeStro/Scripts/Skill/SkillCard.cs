@@ -1,14 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
 
-public class SkillCard : SkillCardBase
+public class SkillCard : MonoBehaviour
 {
-    RectTransform thisTrans;
-    public override void CompleteSetting()
+    [Header("기본 정보")]
+    public SkillData skillData;
+    public SkillData thisSkillData { set { skillData = value; } }
+
+    public string skillName;
+    public float skillCool;
+    public string skillInfo;
+
+    private void Awake()
     {
-        thisTrans = GetComponent<RectTransform>();
-        thisTrans.localPosition = toMovePos;
+        skillName = skillData.skillName;
+        skillCool = skillData.skillCoolTime;
+        skillInfo = skillData.skillInfo;
     }
+
 }
