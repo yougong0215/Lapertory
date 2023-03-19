@@ -15,3 +15,5 @@ MonoBehaviour:
   _skillName: name_2
   _skillCoolTime: 2
   _skillInfo: skill2
+  _skillSprite: {fileID: 0}
+  _cardColor: {r: 0.8962264, g: 0.68823427, b: 0.8906819, a: 0}

@@ -685,6 +685,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1778080146}
+  - component: {fileID: 1778080147}
   m_Layer: 5
   m_Name: SkillCard_Master
   m_TagString: Untagged
@@ -712,6 +713,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1778080147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778080145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91e9bf176790cae488252cb8d4a19022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSkillCardList: []
 --- !u!1 &1854622058
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,15 +928,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9ecaf298fa61e478d78222d14c21f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skillCardList:
-  - {fileID: 696189910327491806, guid: a6efd6f98c93a59469bbc72170688a97, type: 3}
-  - {fileID: 696189910327491806, guid: 7929d1865abfd824a9286702e9dacb8e, type: 3}
-  - {fileID: 696189910327491806, guid: 9c50a12f70d8e6a41b13c611ab7ecdb0, type: 3}
+  _skillCardDataList:
+  - {fileID: 11400000, guid: a8e4baf8f7947a94d9cfe5a688cf2aaa, type: 2}
+  - {fileID: 11400000, guid: b756f69c0da9b324aafe9b748bf2042e, type: 2}
+  - {fileID: 11400000, guid: 9f4568eb8fc95d84fbb4d0201ae846f6, type: 2}
   _skillCardPos:
   - {x: -600, y: -900, z: 0}
   - {x: 0, y: -900, z: 0}
   - {x: 600, y: -900, z: 0}
   _skillCardMaster: {fileID: 1778080145}
+  _skillCardPrefab: {fileID: 696189910327491806, guid: a6e4ba7f5a2e8d2408ca5139d1da3d0b,
+    type: 3}
 --- !u!1 &2061569154
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,6 +951,7 @@ GameObject:
   - component: {fileID: 2061569157}
   - component: {fileID: 2061569156}
   - component: {fileID: 2061569155}
+  - component: {fileID: 2061569159}
   m_Layer: 5
   m_Name: SkillCanvas
   m_TagString: Untagged
@@ -1025,6 +1042,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2061569159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061569154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91e9bf176790cae488252cb8d4a19022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSkillCardList: []
 --- !u!4 &88557216105183741
 Transform:
   m_ObjectHideFlags: 0

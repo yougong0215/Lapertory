@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class PlayerSkill : MonoBehaviour
 {
-    public List<GameObject> playerCanUseSkillList = new List<GameObject>();
+    public List<SkillData> playerCanUseSkillList = new List<SkillData>();
 }
