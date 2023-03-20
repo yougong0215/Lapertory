@@ -14,6 +14,7 @@ public class SkillICardManager : MonoBehaviour
     }
     public void CompleteSelectCard(GameObject selectCard)
     {
+        
         currentSkillCardList.Remove(selectCard);
 
         EventSelectSkillCard(selectCard);
@@ -22,7 +23,6 @@ public class SkillICardManager : MonoBehaviour
     private void EventSelectSkillCard(GameObject selectCard)
     {
         SkillCard _selectSkillcard = selectCard.GetComponent<SkillCard>();
-        Debug.Log(_selectSkillcard.skillData);
         _playerSkill.playerCanUseSkillList.Add(_selectSkillcard.skillData);
         StartCoroutine(SelectCardEventCoroutine(selectCard));
     }
@@ -41,5 +41,6 @@ public class SkillICardManager : MonoBehaviour
             unSelectCard.transform.DOLocalMoveY(-900, 0.6f).SetEase(Ease.InBack);
             Destroy(unSelectCard, 0.7f);
         }
+        currentSkillCardList.Clear();
     }
 }
