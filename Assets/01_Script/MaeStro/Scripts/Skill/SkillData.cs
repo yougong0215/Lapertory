@@ -21,4 +21,14 @@ public class SkillData : ScriptableObject
 
     [SerializeField] private Color _cardColor;
     public Color cardColor { get { return _cardColor; } }
+
+    [SerializeField] private GameObject _effectPrefab;
+    public GameObject effecctPrefab { get { return _effectPrefab; } }
+
+    [SerializeField] private Vector3 _producePos;
+    public Vector3 producePos { get { return _producePos; } }
+
+    [SerializeField] private float _effectDieTime;
+    public float effectDieTime { get { return _effectDieTime; } }
+
 }
