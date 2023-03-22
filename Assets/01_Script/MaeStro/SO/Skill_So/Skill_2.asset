@@ -15,7 +15,7 @@ MonoBehaviour:
   _skillName: name_2
   _skillCoolTime: 2
   _skillInfo: skill2
-  _skillSprite: {fileID: 0}
+  _skillSprite: {fileID: 21300000, guid: 7eb04230002dc2545b2845707781ab7b, type: 3}
   _cardColor: {r: 0.8962264, g: 0.68823427, b: 0.8906819, a: 0}
   _effectPrefab: {fileID: 4932088507883938021, guid: 0e5709a7ddb77924090c112cf73bb98a,
     type: 3}
