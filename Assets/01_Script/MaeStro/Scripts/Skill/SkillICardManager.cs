@@ -7,15 +7,19 @@ public class SkillICardManager : MonoBehaviour
 {
     public List<GameObject> currentSkillCardList = new List<GameObject>();
     PlayerSkill _playerSkill;
+    SkillKeySelecter _skillKeySelecter;
+    SkillCard _skillCard;
 
     private void Awake()
     {
         _playerSkill = GameObject.Find("Player").GetComponent<PlayerSkill>();
+        _skillKeySelecter = GameObject.Find("SkillKeySelecter").GetComponent<SkillKeySelecter>();
     }
     public void CompleteSelectCard(GameObject selectCard)
     {
-        
+        _skillCard = selectCard.GetComponent<SkillCard>();
         currentSkillCardList.Remove(selectCard);
+        _skillKeySelecter.SettingKey(_skillCard.skillData.skillKey, _skillCard.skillData);
 
         EventSelectSkillCard(selectCard);
         EventUnSelectSkillCard(currentSkillCardList);

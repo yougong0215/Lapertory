@@ -4,20 +4,35 @@ using UnityEngine;
 
 public class PlayerSkill : MonoBehaviour
 {
-    [SerializeField] private SkillData skillData;
     public List<SkillData> playerCanUseSkillList = new List<SkillData>();
     GameObject _skillPrefab;
+    SkillKeySelecter _skillKeySelecter;
+
+    private void Awake()
+    {
+        _skillKeySelecter = GameObject.Find("SkillKeySelecter").GetComponent<SkillKeySelecter>();
+    }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F))
+        if(Input.anyKeyDown)
         {
-            skillData = playerCanUseSkillList[0];
-            _skillPrefab = Instantiate(skillData.effecctPrefab);
-            _skillPrefab.transform.rotation = this.transform.rotation;
-            _skillPrefab.transform.position = this.transform.position + skillData.producePos;
-
-            KillEffect(skillData.effectDieTime);
+            foreach(var skillDic in _skillKeySelecter.skillKeyDic)
+            {
+                if(Input.GetKeyDown(skillDic.Key))
+                {
+                    UseSkill(skillDic.Value);
+                }
+            }
         }
+    }
+
+    void UseSkill(SkillData _skillData)
+    {
+        _skillPrefab = Instantiate(_skillData.effecctPrefab);
+        _skillPrefab.transform.rotation = this.transform.rotation;
+        _skillPrefab.transform.position = this.transform.position + _skillData.producePos;
+
+        KillEffect(_skillData.effectDieTime);
     }
 
     void KillEffect(float time)

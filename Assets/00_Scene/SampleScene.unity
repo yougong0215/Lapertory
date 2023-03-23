@@ -153,9 +153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectSkillData: {fileID: 0}
-  _KeyPanel: {fileID: 0}
-  _keyPrefab: {fileID: 0}
-  keyCount: 0
 --- !u!4 &154705440
 Transform:
   m_ObjectHideFlags: 0
@@ -4316,7 +4313,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00cae26478e70484da2f7feb2cfc48cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillData: {fileID: 0}
   playerCanUseSkillList: []
 --- !u!1 &6016349231038094315
 GameObject:

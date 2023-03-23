@@ -31,4 +31,7 @@ public class SkillData : ScriptableObject
     [SerializeField] private float _effectDieTime;
     public float effectDieTime { get { return _effectDieTime; } }
 
+    [SerializeField] private KeyCode _skillKey;
+    public KeyCode skillKey { get { return _skillKey; } }
+
 }

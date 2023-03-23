@@ -21,3 +21,4 @@ MonoBehaviour:
     type: 3}
   _producePos: {x: 0, y: 0, z: 10}
   _effectDieTime: 3.8
+  _skillKey: 122

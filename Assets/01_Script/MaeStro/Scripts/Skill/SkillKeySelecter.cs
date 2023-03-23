@@ -7,13 +7,32 @@ public class SkillKeySelecter : MonoBehaviour
 {
     public Dictionary<KeyCode, SkillData> skillKeyDic = new Dictionary<KeyCode, SkillData>();
     public SkillData selectSkillData;
-    [SerializeField] private GameObject _KeyPanel;
-    [SerializeField] private GameObject _keyPrefab;
 
-    [SerializeField] private int keyCount;
-    GameObject currentKey;
-    TextMeshProUGUI _keyText;
-    public void SettingKey()
+    public void SettingKey(KeyCode key, SkillData skillData)
+    {
+        foreach (var inKey in skillKeyDic)
+        {
+            if(inKey.Key == key)
+            {
+                return;
+            }
+        }
+        skillKeyDic.Add(key, skillData);
+    }
+
+    public void ChangeKey(KeyCode key, SkillData skillData)
+    {
+        foreach (var selectData in skillKeyDic)
+        {
+            if(skillData = selectData.Value)
+            {
+                skillKeyDic.Remove(selectData.Key);
+            }
+        }
+        skillKeyDic.Add(key, skillData);
+    }
+
+    private void Update()
     {
         
     }
