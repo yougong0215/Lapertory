@@ -6,7 +6,6 @@ using TMPro;
 public class SkillKeySelecter : MonoBehaviour
 {
     public Dictionary<KeyCode, SkillData> skillKeyDic = new Dictionary<KeyCode, SkillData>();
-    public SkillData selectSkillData;
 
     public void SettingKey(KeyCode key, SkillData skillData)
     {
@@ -24,7 +23,7 @@ public class SkillKeySelecter : MonoBehaviour
     {
         foreach (var selectData in skillKeyDic)
         {
-            if(skillData = selectData.Value)
+            if(skillData == selectData .Value)
             {
                 skillKeyDic.Remove(selectData.Key);
             }

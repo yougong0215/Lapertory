@@ -34,4 +34,6 @@ public class SkillData : ScriptableObject
     [SerializeField] private KeyCode _skillKey;
     public KeyCode skillKey { get { return _skillKey; } }
 
+    [SerializeField] private int _skillLevel;
+    public int skillLevel { get { return _skillLevel; } }
 }

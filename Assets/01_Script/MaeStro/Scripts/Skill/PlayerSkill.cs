@@ -7,7 +7,7 @@ public class PlayerSkill : MonoBehaviour
     public List<SkillData> playerCanUseSkillList = new List<SkillData>();
     GameObject _skillPrefab;
     SkillKeySelecter _skillKeySelecter;
-
+    [SerializeField] private Transform targetPos;
     private void Awake()
     {
         _skillKeySelecter = GameObject.Find("SkillKeySelecter").GetComponent<SkillKeySelecter>();
@@ -29,9 +29,7 @@ public class PlayerSkill : MonoBehaviour
     void UseSkill(SkillData _skillData)
     {
         _skillPrefab = Instantiate(_skillData.effecctPrefab);
-        _skillPrefab.transform.rotation = this.transform.rotation;
-        _skillPrefab.transform.position = this.transform.position + _skillData.producePos;
-
+        _skillPrefab.transform.position = transform.position + transform.forward * 10;
         KillEffect(_skillData.effectDieTime);
     }
 
