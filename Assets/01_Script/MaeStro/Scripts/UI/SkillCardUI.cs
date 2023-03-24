@@ -5,41 +5,20 @@ using TMPro;
 
 public class SkillCardUI : MonoBehaviour
 {
-    [SerializeField] private Canvas _skillSettingCanvas;
-    [SerializeField] private GameObject _content;
-    [SerializeField] private GameObject _cardUIPrefab;
-    private RectTransform _contentRect;
-    bool canvasActive;
-    PlayerSkill _playerSkill;
+    public TextMeshProUGUI nameText;
+    public TextMeshProUGUI keyText;
 
-    TextMeshProUGUI nameText;
-    TextMeshProUGUI keyText;
+
     private void Awake()
     {
-        _playerSkill = GameObject.Find("Player").GetComponent<PlayerSkill>();
-        _skillSettingCanvas = GameObject.Find("SkillSettingCanvas").GetComponent<Canvas>();
-        _contentRect = _content.GetComponent<RectTransform>();
+        nameText = transform.Find("NameText").GetComponent<TextMeshProUGUI>();
+        keyText = transform.Find("KeyText").GetComponent<TextMeshProUGUI>();
     }
-    private void Start()
+
+    public void ValueSetting(SkillData _skilLData)
     {
-        _skillSettingCanvas.enabled = canvasActive;
+        Debug.Log(_skilLData);
+        nameText.text = _skilLData.skillName;
+        keyText.text = _skilLData.skillKey.ToString();
     }
-
-    public void SettingPanel()
-    {
-        canvasActive = _skillSettingCanvas.enabled;
-        _skillSettingCanvas.enabled = !canvasActive;
-
-        if(canvasActive)
-        {
-            for(int i = 0; i < _playerSkill.playerCanUseSkillList.Count; i++)
-            {
-                GameObject _cardUI = Instantiate(_cardUIPrefab, _content.transform);
-
-                nameText = _cardUI.transform.Find("NameText").GetComponent<TextMeshProUGUI>();
-                keyText = _cardUI.transform.Find("KeyText").GetComponent<TextMeshProUGUI>();
-            }
-        }
-    }
-    
 }
