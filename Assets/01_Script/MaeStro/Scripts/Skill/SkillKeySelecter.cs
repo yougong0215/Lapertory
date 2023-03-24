@@ -5,9 +5,9 @@ using TMPro;
 
 public class SkillKeySelecter : MonoBehaviour
 {
-    public Dictionary<KeyCode, SkillData> skillKeyDic = new Dictionary<KeyCode, SkillData>();
+    public Dictionary<KeyCode, GameObject> skillKeyDic = new Dictionary<KeyCode, GameObject>();
 
-    public void SettingKey(KeyCode key, SkillData skillData)
+    public void SettingKey(KeyCode key, GameObject skillObject)
     {
         foreach (var inKey in skillKeyDic)
         {
@@ -16,19 +16,19 @@ public class SkillKeySelecter : MonoBehaviour
                 return;
             }
         }
-        skillKeyDic.Add(key, skillData);
+        skillKeyDic.Add(key, skillObject);
     }
 
-    public void ChangeKey(KeyCode key, SkillData skillData)
+    public void ChangeKey(KeyCode key, GameObject skillObject)
     {
         foreach (var selectData in skillKeyDic)
         {
-            if(skillData == selectData .Value)
+            if(skillObject == selectData .Value)
             {
                 skillKeyDic.Remove(selectData.Key);
             }
         }
-        skillKeyDic.Add(key, skillData);
+        skillKeyDic.Add(key, skillObject);
     }
 
     private void Update()

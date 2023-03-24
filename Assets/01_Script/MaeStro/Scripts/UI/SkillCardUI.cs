@@ -15,10 +15,11 @@ public class SkillCardUI : MonoBehaviour
         keyText = transform.Find("KeyText").GetComponent<TextMeshProUGUI>();
     }
 
-    public void ValueSetting(SkillData _skilLData)
+    public void ValueSetting(GameObject _skilLData)
     {
-        Debug.Log(_skilLData);
-        nameText.text = _skilLData.skillName;
-        keyText.text = _skilLData.skillKey.ToString();
+        SkillBase skillBase = _skilLData.GetComponent<SkillBase>();
+
+        nameText.text = skillBase.skillName;
+        keyText.text = skillBase.skillKey.ToString();
     }
 }

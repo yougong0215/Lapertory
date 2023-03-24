@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerSkill : MonoBehaviour
 {
-    public List<SkillData> playerCanUseSkillList = new List<SkillData>();
+    public List<GameObject> playerCanUseSkillList = new List<GameObject>();
+    public List<GameObject> playerSkillList = new List<GameObject>();
     GameObject _skillPrefab;
     SkillKeySelecter _skillKeySelecter;
     [SerializeField] private Transform targetPos;
@@ -26,11 +27,13 @@ public class PlayerSkill : MonoBehaviour
         }
     }
 
-    void UseSkill(SkillData _skillData)
+    void UseSkill(GameObject _skillObject)
     {
-        _skillPrefab = Instantiate(_skillData.effecctPrefab);
+        SkillBase _skillBase = _skillObject.GetComponent<SkillBase>();
+
+        _skillPrefab = Instantiate(_skillBase.skillEffect);
         _skillPrefab.transform.position = transform.position + transform.forward * 10;
-        KillEffect(_skillData.effectDieTime);
+        KillEffect(_skillBase.effectDieTime);
     }
 
     void KillEffect(float time)

@@ -9,7 +9,7 @@ public class SkillICardManager : MonoBehaviour
     PlayerSkill _playerSkill;
     SkillKeySelecter _skillKeySelecter;
     SkillCard _skillCard;
-
+    GameObject _skillObject;
     private void Awake()
     {
         _playerSkill = GameObject.Find("Player").GetComponent<PlayerSkill>();
@@ -19,15 +19,27 @@ public class SkillICardManager : MonoBehaviour
     {
         _skillCard = selectCard.GetComponent<SkillCard>();
         currentSkillCardList.Remove(selectCard);
-        _skillKeySelecter.SettingKey(_skillCard.skillData.skillKey, _skillCard.skillData);
+
+
+        foreach (GameObject _selectSkill in _playerSkill.playerSkillList)
+        {
+            SkillBase skillBase = _selectSkill.GetComponent<SkillBase>();
+            if (skillBase.thisSkillData == _skillCard.skillData)
+            {
+                _skillObject = _selectSkill;
+            }
+        }
+
+        _skillKeySelecter.SettingKey(_skillCard.skillData.skillKey, _skillObject);
 
         EventSelectSkillCard(selectCard);
         EventUnSelectSkillCard(currentSkillCardList);
     }
     private void EventSelectSkillCard(GameObject selectCard)
     {
-        SkillCard _selectSkillcard = selectCard.GetComponent<SkillCard>();
-        _playerSkill.playerCanUseSkillList.Add(_selectSkillcard.skillData);
+        SkillBase skillBase = _skillObject.GetComponent<SkillBase>();
+        skillBase.FirstSetSkill();
+        _playerSkill.playerCanUseSkillList.Add(_skillObject);
         StartCoroutine(SelectCardEventCoroutine(selectCard));
     }
     IEnumerator SelectCardEventCoroutine(GameObject selectCard)
