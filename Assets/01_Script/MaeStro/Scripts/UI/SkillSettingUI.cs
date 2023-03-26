@@ -37,10 +37,12 @@ public class SkillSettingUI : MonoBehaviour
     public void SettingPanel()
     {
         canvasActive = _skillSettingCanvas.enabled;
+       
         _skillSettingCanvas.enabled = !canvasActive;
         if (_skillSettingCanvas.enabled)
         {
-            for(int i = 0; i < _playerSkill.playerCanUseSkillList.Count; i++)
+            _playerSkill.canUseSkill = false;
+            for (int i = 0; i < _playerSkill.playerCanUseSkillList.Count; i++)
             {
                 GameObject _cardUI = Instantiate(_cardUIPrefab, _content.transform);
                 _cardUIList.Add(_cardUI);
@@ -54,10 +56,12 @@ public class SkillSettingUI : MonoBehaviour
         }
         else
         {
+           
             foreach(GameObject selectUI in _cardUIList)
             {
                 Destroy(selectUI);
             }
+            _playerSkill.canUseSkill = true;
         }
     }
     

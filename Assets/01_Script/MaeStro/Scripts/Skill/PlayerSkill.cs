@@ -9,13 +9,15 @@ public class PlayerSkill : MonoBehaviour
     GameObject _skillPrefab;
     SkillKeySelecter _skillKeySelecter;
     [SerializeField] private Transform targetPos;
+
+    public bool canUseSkill;
     private void Awake()
     {
         _skillKeySelecter = GameObject.Find("SkillKeySelecter").GetComponent<SkillKeySelecter>();
     }
     private void Update()
     {
-        if(Input.anyKeyDown)
+        if(Input.anyKeyDown && canUseSkill)
         {
             foreach(var skillDic in _skillKeySelecter.skillKeyDic)
             {

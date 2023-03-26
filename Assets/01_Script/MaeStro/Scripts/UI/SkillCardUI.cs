@@ -7,6 +7,7 @@ public class SkillCardUI : MonoBehaviour
 {
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI keyText;
+    SkillKeySelecter _skillKeySelecter;
 
     SkillBase skillBase;
     bool isCangeKey;
@@ -18,6 +19,7 @@ public class SkillCardUI : MonoBehaviour
     {
         nameText = transform.Find("NameText").GetComponent<TextMeshProUGUI>();
         keyText = transform.Find("KeyText").GetComponent<TextMeshProUGUI>();
+        _skillKeySelecter = GameObject.Find("SkillKeySelecter").GetComponent<SkillKeySelecter>();
     }
 
     public void ValueSetting(GameObject _skilLData)
@@ -37,8 +39,21 @@ public class SkillCardUI : MonoBehaviour
             {
                 changeKey = keyChangeEvent.keyCode;
                 skillBase.skillKey = changeKey;
+                foreach(var _selectKey in _skillKeySelecter.skillKeyDic)
+                {
+                    if (_selectKey.Value == skillBase.gameObject)
+                    {
+                        Debug.Log(_selectKey);
+                        _skillKeySelecter.skillKeyDic.Remove(_selectKey.Key);
+                        _skillKeySelecter.skillKeyDic.Add(skillBase.skillKey, _selectKey.Value);
+                        
+                        break;
+                    }
+                }
+
                 keyText.text = changeKey.ToString();
                 keyText.color = normalColor;
+
                 isCangeKey = false;
             }
         }

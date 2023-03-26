@@ -7,7 +7,6 @@ public class PlayerMove : MonoBehaviour
 {
     [Header("컴포넌트")]
     private CharacterController _playerController;
-    //private AnimationSelecter _animationSelecter;
 
     [Header("수치 조정")]
     public bool canMove;
@@ -25,7 +24,6 @@ public class PlayerMove : MonoBehaviour
     {
         canMove = true;
         _playerController = GetComponent<CharacterController>();
-        //_animationSelecter = GetComponent<AnimationSelecter>();
     }
     private void PlayerGravity()
     {
