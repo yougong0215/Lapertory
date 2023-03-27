@@ -12,11 +12,6 @@ public class PlayerSkillSelecter : MonoBehaviour
     private SkillData _skillData;
     [SerializeField] private GameObject _skillCardMaster;
 
-    [Header("스킬 정보")]
-    private string _skillName;
-    private float _skillCoolTime;
-    private string _skillInfo;
-
     [Header("카드 요소")]
     [SerializeField] private GameObject _skillCardPrefab;
     GameObject _skillCard;
@@ -44,7 +39,6 @@ public class PlayerSkillSelecter : MonoBehaviour
 
             yield return new WaitForSeconds(0.15f);
         }
-        // 빰빠밤 이벤트
     }
     private void SkillInfoSetting(int num)
     {

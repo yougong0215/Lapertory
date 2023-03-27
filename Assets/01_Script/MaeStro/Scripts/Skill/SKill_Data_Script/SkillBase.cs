@@ -8,6 +8,7 @@ public class SkillBase : MonoBehaviour
     public SkillData thisSkillData;
     public SkillUpgradeValue_Data _upgradeValue;
 
+    public int level;
     public KeyCode skillKey;
     public string skillName;
     public float skillCoolTime;

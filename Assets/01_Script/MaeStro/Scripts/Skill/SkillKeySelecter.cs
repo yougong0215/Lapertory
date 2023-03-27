@@ -31,8 +31,5 @@ public class SkillKeySelecter : MonoBehaviour
         skillKeyDic.Add(key, skillObject);
     }
 
-    private void Update()
-    {
-        
-    }
+   
 }

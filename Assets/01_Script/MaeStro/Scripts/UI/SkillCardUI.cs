@@ -7,6 +7,7 @@ public class SkillCardUI : MonoBehaviour
 {
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI keyText;
+    public TextMeshProUGUI levelText;
     SkillKeySelecter _skillKeySelecter;
 
     SkillBase skillBase;
@@ -19,6 +20,7 @@ public class SkillCardUI : MonoBehaviour
     {
         nameText = transform.Find("NameText").GetComponent<TextMeshProUGUI>();
         keyText = transform.Find("KeyText").GetComponent<TextMeshProUGUI>();
+        levelText = transform.Find("LevelText").GetComponent<TextMeshProUGUI>();
         _skillKeySelecter = GameObject.Find("SkillKeySelecter").GetComponent<SkillKeySelecter>();
     }
 
@@ -28,6 +30,7 @@ public class SkillCardUI : MonoBehaviour
 
         nameText.text = skillBase.skillName;
         keyText.text = skillBase.skillKey.ToString();
+        levelText.text = skillBase.level.ToString();
     }
 
     private void OnGUI()
@@ -50,10 +53,8 @@ public class SkillCardUI : MonoBehaviour
                         break;
                     }
                 }
-
-                keyText.text = changeKey.ToString();
+                keyText.text = skillBase.skillKey.ToString();
                 keyText.color = normalColor;
-
                 isCangeKey = false;
             }
         }
@@ -62,6 +63,7 @@ public class SkillCardUI : MonoBehaviour
 
     public void ChangeKey()
     {
+        
         isCangeKey = !isCangeKey;
         keyText.color = selectColor;
         keyText.text = $"> {skillBase.skillKey} <";

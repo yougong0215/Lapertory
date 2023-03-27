@@ -20,14 +20,23 @@ public class SkillICardManager : MonoBehaviour
         _skillCard = selectCard.GetComponent<SkillCard>();
         currentSkillCardList.Remove(selectCard);
 
-
+        int num = 0;
         foreach (GameObject _selectSkill in _playerSkill.playerSkillList)
         {
             SkillBase skillBase = _selectSkill.GetComponent<SkillBase>();
             if (skillBase.thisSkillData == _skillCard.skillData)
             {
-                _skillObject = _selectSkill;
+                if(skillBase == _playerSkill.playerCanUseSkillList[num])
+                {
+                    skillBase.level++;
+                }
+                else
+                {
+                    _skillObject = _selectSkill;
+                }
+                
             }
+            num++;
         }
 
         _skillKeySelecter.SettingKey(_skillCard.skillData.skillKey, _skillObject);
