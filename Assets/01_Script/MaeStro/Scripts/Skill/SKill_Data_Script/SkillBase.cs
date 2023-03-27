@@ -18,7 +18,7 @@ public class SkillBase : MonoBehaviour
     public Vector3 producePos;
     public GameObject skillEffect;
 
-    public virtual void FirstSetSkill()
+    public virtual void SetSkill()
     {
 
     }

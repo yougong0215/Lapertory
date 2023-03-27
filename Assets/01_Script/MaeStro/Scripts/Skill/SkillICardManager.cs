@@ -20,25 +20,21 @@ public class SkillICardManager : MonoBehaviour
         _skillCard = selectCard.GetComponent<SkillCard>();
         currentSkillCardList.Remove(selectCard);
 
-        int num = 0;
-        foreach (GameObject _selectSkill in _playerSkill.playerSkillList)
+        if(_playerSkill.playerCanUseSkillList.Count != 0)
         {
-            SkillBase skillBase = _selectSkill.GetComponent<SkillBase>();
-            if (skillBase.thisSkillData == _skillCard.skillData)
+            foreach (GameObject _selectSkill in _playerSkill.playerSkillList)
             {
-                if(skillBase == _playerSkill.playerCanUseSkillList[num])
-                {
-                    skillBase.level++;
-                }
-                else
+                SkillBase _skillBase = _selectSkill.GetComponent<SkillBase>();
+
+                if (_skillBase.thisSkillData == _skillCard.skillData)
                 {
                     _skillObject = _selectSkill;
                 }
                 
+                    
             }
-            num++;
         }
-
+        
         _skillKeySelecter.SettingKey(_skillCard.skillData.skillKey, _skillObject);
 
         EventSelectSkillCard(selectCard);
@@ -46,8 +42,10 @@ public class SkillICardManager : MonoBehaviour
     }
     private void EventSelectSkillCard(GameObject selectCard)
     {
+        Debug.Log(_skillObject);
         SkillBase skillBase = _skillObject.GetComponent<SkillBase>();
-        skillBase.FirstSetSkill();
+        
+        skillBase.SetSkill();
         _playerSkill.playerCanUseSkillList.Add(_skillObject);
         StartCoroutine(SelectCardEventCoroutine(selectCard));
     }
