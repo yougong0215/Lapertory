@@ -44,12 +44,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b17ec6235519f438f2f1e16fcf1a54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFirst: 1
   thisSkillData: {fileID: 11400000, guid: b756f69c0da9b324aafe9b748bf2042e, type: 2}
   _upgradeValue: {fileID: 0}
-  skillKey: 0
-  skillName: 
-  skillCoolTime: 0
-  skillInfo: 
-  effectDieTime: 0
-  producePos: {x: 0, y: 0, z: 0}
-  skillEffect: {fileID: 0}
+  level: 1
+  skillKey: 120
+  skillName: name_2
+  skillCoolTime: 2
+  skillInfo: skill2
+  effectDieTime: 3.8
+  producePos: {x: 0, y: 0, z: 10}
+  skillEffect: {fileID: 4932088507883938021, guid: 0e5709a7ddb77924090c112cf73bb98a,
+    type: 3}

@@ -24,7 +24,6 @@ public class SkillCard : MonoBehaviour
         skillName = skillData.skillName;
         skillCool = skillData.skillCoolTime;
         skillInfo = skillData.skillInfo;
-        _thisCardImage.color = new Color(skillData.cardColor.r, skillData.cardColor.g, skillData.cardColor.b);
 
         _skillICardManager.currentSkillCardList.Add(this.gameObject);
     }

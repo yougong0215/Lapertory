@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using AnimationMenu;
+using ActionMenu;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -63,11 +63,11 @@ public class PlayerMove : MonoBehaviour
     {
         if(XInput != 0 || ZInput != 0)
         {
-            AnimationSelecter.animationSelecter.AccesAnimation(animationMenu.Walk);
+            AnimationSelecter.animationSelecter.AccesAnimation(AnimationMenu.Walk);
         }
         else
         {
-            AnimationSelecter.animationSelecter.AccesAnimation(animationMenu.Idle);
+            AnimationSelecter.animationSelecter.AccesAnimation(AnimationMenu.Idle);
         }
     }
     void FixedUpdate()

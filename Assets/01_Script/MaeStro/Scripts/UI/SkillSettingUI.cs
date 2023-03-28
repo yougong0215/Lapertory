@@ -62,6 +62,7 @@ public class SkillSettingUI : MonoBehaviour
                 Destroy(selectUI);
             }
             _playerSkill.canUseSkill = true;
+            _contentRect.sizeDelta = new Vector3(100, 700);
         }
     }
     

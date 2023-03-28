@@ -1,11 +1,16 @@
 
 using UnityEngine;
 
-namespace AnimationMenu
+namespace ActionMenu
 {
-    public enum animationMenu
+    public enum AnimationMenu
     {
         Idle,
         Walk
+    }
+
+    public enum SkillMenu
+    {
+
     }
 }

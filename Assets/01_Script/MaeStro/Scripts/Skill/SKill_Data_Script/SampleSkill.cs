@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class SampleSkill : SkillBase
 {
-    bool isFirst = true;
     public override void SetSkill()
     {
         if(isFirst)
         {
             FirstSetting();
+            isFirst = false;
         }
         else
         {
@@ -22,8 +22,6 @@ public class SampleSkill : SkillBase
         skillName = thisSkillData.skillName;
         skillCoolTime = thisSkillData.skillCoolTime;
         skillInfo = thisSkillData.skillInfo;
-        effectDieTime = thisSkillData.effectDieTime;
-        producePos = thisSkillData.producePos;
         skillEffect = thisSkillData.effecctPrefab;
     }
 

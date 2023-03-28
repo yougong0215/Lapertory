@@ -20,33 +20,29 @@ public class SkillICardManager : MonoBehaviour
         _skillCard = selectCard.GetComponent<SkillCard>();
         currentSkillCardList.Remove(selectCard);
 
-        if(_playerSkill.playerCanUseSkillList.Count != 0)
+        foreach (GameObject _selectSkill in _playerSkill.playerSkillList)
         {
-            foreach (GameObject _selectSkill in _playerSkill.playerSkillList)
+            SkillBase _skillBaseNormal = _selectSkill.GetComponent<SkillBase>();
+            if (_skillBaseNormal.thisSkillData == _skillCard.skillData)
             {
-                SkillBase _skillBase = _selectSkill.GetComponent<SkillBase>();
-
-                if (_skillBase.thisSkillData == _skillCard.skillData)
-                {
-                    _skillObject = _selectSkill;
-                }
-                
-                    
+                _skillObject = _selectSkill;
             }
         }
-        
-        _skillKeySelecter.SettingKey(_skillCard.skillData.skillKey, _skillObject);
-
+        SkillBase _skillBase = _skillObject.GetComponent<SkillBase>();
+        if(_skillBase.isFirst)
+        {
+            Debug.Log(_skillObject);
+            _skillKeySelecter.SettingKey(_skillCard.skillData.skillKey, _skillObject);
+            _playerSkill.playerCanUseSkillList.Add(_skillObject);
+        }
         EventSelectSkillCard(selectCard);
         EventUnSelectSkillCard(currentSkillCardList);
     }
     private void EventSelectSkillCard(GameObject selectCard)
     {
-        Debug.Log(_skillObject);
         SkillBase skillBase = _skillObject.GetComponent<SkillBase>();
         
         skillBase.SetSkill();
-        _playerSkill.playerCanUseSkillList.Add(_skillObject);
         StartCoroutine(SelectCardEventCoroutine(selectCard));
     }
     IEnumerator SelectCardEventCoroutine(GameObject selectCard)

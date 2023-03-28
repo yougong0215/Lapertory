@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using AnimationMenu;
+using ActionMenu;
 using System;
 
 public class AnimationSelecter : MonoBehaviour
@@ -10,10 +10,10 @@ public class AnimationSelecter : MonoBehaviour
 
     [SerializeField] AnimContainer _animContainer;
     AnimationController _animationController;
-    Dictionary<animationMenu, string> _aniDic = null;
+    Dictionary<AnimationMenu, string> _aniDic = null;
     private void Awake()
     {
-        _aniDic = new Dictionary<animationMenu, string>();
+        _aniDic = new Dictionary<AnimationMenu, string>();
         _animationController = GetComponent<AnimationController>();
 
         if (animationSelecter == null)
@@ -24,7 +24,7 @@ public class AnimationSelecter : MonoBehaviour
 
     private void Start()
     {
-        foreach (animationMenu animation in Enum.GetValues(typeof(animationMenu)))
+        foreach (AnimationMenu animation in Enum.GetValues(typeof(AnimationMenu)))
         {
             foreach (AnimationClip selectAni in _animContainer.playerAnimationList)
             {
@@ -36,7 +36,7 @@ public class AnimationSelecter : MonoBehaviour
         }
     }
 
-    public void AccesAnimation(animationMenu anima)
+    public void AccesAnimation(AnimationMenu anima)
     {
         _animationController.SettingAnimation(_aniDic[anima]);
     }
