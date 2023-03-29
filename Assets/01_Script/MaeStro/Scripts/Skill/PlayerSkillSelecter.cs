@@ -6,6 +6,7 @@ using DG.Tweening;
 using UnityEngine.Events;
 public class PlayerSkillSelecter : MonoBehaviour
 {
+    private EngraveSetter _engraveSetter;
     [SerializeField] private List<SkillData> _skillCardDataList = new List<SkillData>();
     [SerializeField] private Vector3[] _skillCardPos;
     private  SkillCard _skillCardData;
@@ -18,6 +19,7 @@ public class PlayerSkillSelecter : MonoBehaviour
     TextMeshProUGUI nameText;
     TextMeshProUGUI coolTime;
     TextMeshProUGUI info;
+    TextMeshProUGUI engraveText;
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.V))
@@ -27,7 +29,7 @@ public class PlayerSkillSelecter : MonoBehaviour
     }
     public void SkillSelectEvent()
     {
-        StartCoroutine(EventStart());
+        StartCoroutine(EventStart());   
     }
     IEnumerator EventStart()
     {
@@ -52,16 +54,20 @@ public class PlayerSkillSelecter : MonoBehaviour
     }
     private void SettingCard()
     {
+        _engraveSetter = GameObject.Find("EngraveSelecter").GetComponent<EngraveSetter>();
         _skillCardData.skillData = _skillData;
         _skillCardData.SetDataValue();
         #region  텍스트 받기
         nameText = _skillCard.transform.Find("SkillName").GetComponent<TextMeshProUGUI>();
         coolTime = _skillCard.transform.Find("SkillCoolTime").GetComponent<TextMeshProUGUI>();
         info = _skillCard.transform.Find("SkillInfo").GetComponent<TextMeshProUGUI>();
+        engraveText = _skillCard.transform.Find("Engrave").GetComponent<TextMeshProUGUI>();
+        
         #endregion
         nameText.text = _skillCardData.skillData.skillName;
         coolTime.text = _skillCardData.skillData.skillCoolTime.ToString();
         info.text = _skillCardData.skillData.skillInfo;
+        engraveText.text = _engraveSetter.EngraveSetting();
     }
     private void SkillInfoDetection()
     {

@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using EngraveList;
 
 public class EngraveSetter : MonoBehaviour
 {
+    [SerializeField] private List<EngraveData> _dataList = new List<EngraveData>();
     public GameObject engraveGameobject;
-    public void EngraveSetting()
+    public string EngraveSetting()
     {
+        int rand = Random.Range(0, _dataList.Count);
 
+        return _dataList[rand].engraveName;
     }
 }

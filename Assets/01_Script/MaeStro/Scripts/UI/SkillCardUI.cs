@@ -5,6 +5,7 @@ using TMPro;
 
 public class SkillCardUI : MonoBehaviour
 {
+    public TextMeshProUGUI engraveText;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI keyText;
     public TextMeshProUGUI levelText;
@@ -18,6 +19,7 @@ public class SkillCardUI : MonoBehaviour
     Color normalColor = new Color(0, 0, 0);
     private void Awake()
     {
+        engraveText = transform.Find("EngraveText").GetComponent<TextMeshProUGUI>();
         nameText = transform.Find("NameText").GetComponent<TextMeshProUGUI>();
         keyText = transform.Find("KeyText").GetComponent<TextMeshProUGUI>();
         levelText = transform.Find("LevelText").GetComponent<TextMeshProUGUI>();
