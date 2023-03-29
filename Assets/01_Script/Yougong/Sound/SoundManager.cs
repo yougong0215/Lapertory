@@ -38,6 +38,6 @@ public class SoundManager : MonoBehaviour
 
     public void PlayOneShot(AudioClip Audio, Sound enums = Sound.Master)
     {
-        transform.GetChild((int)enums).gameObject.GetComponent<> 
+        //transform.GetChild((int)enums).gameObject.GetComponent<> 
     }
 }
