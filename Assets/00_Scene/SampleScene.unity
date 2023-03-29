@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a549850c800602e4da581777e2994baf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  engraveGameobject: {fileID: 0}
 --- !u!1 &154705438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,7 +1353,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -927759.5, y: 402923.75}
+  m_AnchoredPosition: {x: -1166408.6, y: 517793.06}
   m_SizeDelta: {x: 100, y: 700}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1826643863
@@ -1681,33 +1682,6 @@ MonoBehaviour:
   - {x: 0, y: -900, z: 0}
   - {x: 600, y: -900, z: 0}
   _skillCardMaster: {fileID: 1778080145}
-  SkillSelectEventInput:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1893090950}
-        m_TargetAssemblyTypeName: PlayerSkillSelecter, Assembly-CSharp
-        m_MethodName: SkillSelectEvent
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 137426108}
-        m_TargetAssemblyTypeName: EngraveSetter, Assembly-CSharp
-        m_MethodName: EngraveSetting
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   _skillCardPrefab: {fileID: 696189910327491806, guid: a6e4ba7f5a2e8d2408ca5139d1da3d0b,
     type: 3}
 --- !u!1 &2031460412

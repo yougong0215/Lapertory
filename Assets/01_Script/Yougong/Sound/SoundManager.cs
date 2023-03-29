@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.Audio;
 
 public enum Sound
 {
-    Master = 0,
-    SFX = 1,
-    BGM = 2,
-    EnemySound = 3
+    SFX = 0,
+    BGM = 1,
+    EnemySound = 2,
+    None
 }
 
 public class SoundManager : MonoBehaviour
 {
     private SoundManager _instance = null;
+
+    int _soundChannelNumber = 3;
 
     public SoundManager Instance
     {
@@ -27,17 +30,36 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    AudioSource _audio;
-    private void OnEnable()
-    {
-        for(int i =0; i < transform.childCount; ++i)
-        {
 
-        }
+    AudioMixer _audioMixer;
+    private void Init()
+    {
+        ////어드레서블로 오디오믹서 가져오기
+        //_audioMixer = AddressablesManager.Instance.GetResource<AudioMixer>("MainMixer");
+
+        ////그룹 쪼개기 순서 중요
+        //var groups = _audioMixer.FindMatchingGroups(string.Empty);
+        //_bgmAudioGroup = groups[1];
+        //_effAudioGroup = groups[2];
+        //_environmentAudioGroup = groups[3];
     }
 
-    public void PlayOneShot(AudioClip Audio, Sound enums = Sound.Master)
+    AudioSource _audio;
+
+    private void Awake()
     {
-        //transform.GetChild((int)enums).gameObject.GetComponent<> 
+        for(int i =0; i < _soundChannelNumber; i++)
+        {
+            GameObject obj = Instantiate(new GameObject(), transform);
+            obj.AddComponent<AudioSource>().playOnAwake = false;
+            obj.GetComponent<AudioSource>().outputAudioMixerGroup;
+
+        }
+
+    }
+
+    public void PlayOneShot(AudioClip Audio, Sound enums = Sound.None)
+    {
+        transform.GetChild((int)enums).GetComponent<AudioSource>().PlayOneShot(Audio);
     }
 }
