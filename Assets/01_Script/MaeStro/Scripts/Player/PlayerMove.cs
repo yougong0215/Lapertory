@@ -52,7 +52,6 @@ public class PlayerMove : MonoBehaviour
                                                   Quaternion.LookRotation(_moveDir), 
                                                   Time.fixedDeltaTime * _turnningSpeed);
         }
-
         if(canMove)
         {
             Vector3 move = _moveDir + _verticalVelocity * Vector3.up;
@@ -61,7 +60,7 @@ public class PlayerMove : MonoBehaviour
     }
     private void PlayerMoveAnimation()
     {
-        if(XInput != 0 || ZInput != 0)
+        if(_moveDir.sqrMagnitude > 0)
         {
             AnimationSelecter.animationSelecter.AccesAnimation(AnimationMenu.Walk);
         }

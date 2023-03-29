@@ -31,8 +31,8 @@ public class SkillICardManager : MonoBehaviour
         SkillBase _skillBase = _skillObject.GetComponent<SkillBase>();
         if(_skillBase.isFirst)
         {
-            Debug.Log(_skillObject);
             _skillKeySelecter.SettingKey(_skillCard.skillData.skillKey, _skillObject);
+            Debug.Log(_skillObject);
             _playerSkill.playerCanUseSkillList.Add(_skillObject);
         }
         EventSelectSkillCard(selectCard);

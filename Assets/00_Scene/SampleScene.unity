@@ -123,6 +123,55 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &137426106
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 137426107}
+  - component: {fileID: 137426108}
+  m_Layer: 5
+  m_Name: EngraveSelecter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &137426107
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137426106}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2061569158}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &137426108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137426106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a549850c800602e4da581777e2994baf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &154705438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,7 +1352,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -727355, y: 312457.53}
+  m_AnchoredPosition: {x: -927759.5, y: 402923.75}
   m_SizeDelta: {x: 100, y: 700}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1826643863
@@ -1632,6 +1681,33 @@ MonoBehaviour:
   - {x: 0, y: -900, z: 0}
   - {x: 600, y: -900, z: 0}
   _skillCardMaster: {fileID: 1778080145}
+  SkillSelectEventInput:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1893090950}
+        m_TargetAssemblyTypeName: PlayerSkillSelecter, Assembly-CSharp
+        m_MethodName: SkillSelectEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 137426108}
+        m_TargetAssemblyTypeName: EngraveSetter, Assembly-CSharp
+        m_MethodName: EngraveSetting
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _skillCardPrefab: {fileID: 696189910327491806, guid: a6e4ba7f5a2e8d2408ca5139d1da3d0b,
     type: 3}
 --- !u!1 &2031460412
@@ -1766,6 +1842,7 @@ RectTransform:
   m_Children:
   - {fileID: 1893090949}
   - {fileID: 1778080146}
+  - {fileID: 137426107}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

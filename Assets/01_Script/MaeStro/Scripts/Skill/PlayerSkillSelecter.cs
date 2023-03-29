@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using DG.Tweening;
-
+using UnityEngine.Events;
 public class PlayerSkillSelecter : MonoBehaviour
 {
     [SerializeField] private List<SkillData> _skillCardDataList = new List<SkillData>();
@@ -22,7 +22,7 @@ public class PlayerSkillSelecter : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.V))
         {
-            SkillSelectEvent(); // юс╫ц
+            SkillSelectEvent();
         }
     }
     public void SkillSelectEvent()
@@ -65,7 +65,7 @@ public class PlayerSkillSelecter : MonoBehaviour
     }
     private void SkillInfoDetection()
     {
-        int random = Random.Range(0, _skillCardDataList.Count);
+        int random = UnityEngine.Random.Range(0, _skillCardDataList.Count);
         _skillData = _skillCardDataList[random];
     }
 }
