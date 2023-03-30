@@ -34,7 +34,6 @@ public class Enemy_Controller : MonoBehaviour, IDamage
 
         #region setting
         _CurrentHP = _set.MaxHp;
-
         #endregion
     }
 
@@ -124,7 +123,7 @@ public class Enemy_Controller : MonoBehaviour, IDamage
 
         if (hitTarget != null)
         {
-            hitTarget.IDamage(_set.Damage);
+            //hitTarget.IDamage(_set.Damage);
         }
     }
 
@@ -132,5 +131,10 @@ public class Enemy_Controller : MonoBehaviour, IDamage
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, _set.AttackRange);
+    }
+
+    public void IDamage(float Damage, Vector3 point)
+    {
+        throw new NotImplementedException();
     }
 }
