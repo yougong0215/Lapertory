@@ -19,6 +19,7 @@ public class SkillBase : MonoBehaviour
     public Vector3 producePos;
     public GameObject skillEffect;
 
+    public List<GameObject> engraveList = new List<GameObject>();
     private void Start()
     {
         isFirst = true;

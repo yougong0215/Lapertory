@@ -5,6 +5,8 @@ using TMPro;
 
 public class SkillCardUI : MonoBehaviour
 {
+    private List<GameObject> engraveObjectList = new List<GameObject>();
+    public TextMeshProUGUI engraveText;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI keyText;
     public TextMeshProUGUI levelText;
@@ -18,10 +20,22 @@ public class SkillCardUI : MonoBehaviour
     Color normalColor = new Color(0, 0, 0);
     private void Awake()
     {
+        engraveText = transform.Find("EngraveText").GetComponent<TextMeshProUGUI>();
         nameText = transform.Find("NameText").GetComponent<TextMeshProUGUI>();
         keyText = transform.Find("KeyText").GetComponent<TextMeshProUGUI>();
         levelText = transform.Find("LevelText").GetComponent<TextMeshProUGUI>();
         _skillKeySelecter = GameObject.Find("SkillKeySelecter").GetComponent<SkillKeySelecter>();
+    }
+
+    public void EngraveSetting(GameObject _skillData)
+    {
+        string engraveAreaText = "";
+        SkillBase _skillBase_engrave = _skillData.GetComponent<SkillBase>();
+
+        //_skillBase_engrave
+
+        engraveText.text = engraveAreaText;
+        
     }
 
     public void ValueSetting(GameObject _skilLData)

@@ -14,6 +14,8 @@ public class SkillCard : MonoBehaviour
 
     Image _thisCardImage;
     SkillICardManager _skillICardManager;
+
+    public GameObject engraveObject;
     private void Awake()
     {
         _thisCardImage = GetComponent<Image>();
