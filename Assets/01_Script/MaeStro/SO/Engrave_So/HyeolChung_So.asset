@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dee5f936192a5747b442273a7382520, type: 3}
   m_Name: HyeolChung_So
   m_EditorClassIdentifier: 
-  _engraveName: 
+  _engraveName: Hyeolchung
   _engraveObject: {fileID: 0}

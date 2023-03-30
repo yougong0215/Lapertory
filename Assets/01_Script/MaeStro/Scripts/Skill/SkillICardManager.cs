@@ -29,6 +29,7 @@ public class SkillICardManager : MonoBehaviour
             }
         }
         SkillBase _skillBase = _skillObject.GetComponent<SkillBase>();
+        
         if(_skillBase.isFirst)
         {
             _skillKeySelecter.SettingKey(_skillCard.skillData.skillKey, _skillObject);

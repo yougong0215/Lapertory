@@ -54,6 +54,10 @@ public class PlayerSkillSelecter : MonoBehaviour
     {
         _skillCardData.skillData = _skillData;
         _skillCardData.SetDataValue();
+
+        EngraveSetter engtaveObject = GameObject.Find("EngraveSelecter").GetComponent<EngraveSetter>();
+        
+
         #region  텍스트 받기
         nameText = _skillCard.transform.Find("SkillName").GetComponent<TextMeshProUGUI>();
         coolTime = _skillCard.transform.Find("SkillCoolTime").GetComponent<TextMeshProUGUI>();
