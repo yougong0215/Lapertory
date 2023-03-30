@@ -5,7 +5,7 @@ namespace EngraveList
     {
         hyeolchung,
         amgak,
-        jonshin
+        jongshin
     }
 }
 

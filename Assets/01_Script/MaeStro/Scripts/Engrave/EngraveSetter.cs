@@ -5,6 +5,7 @@ using EngraveList;
 
 public class EngraveSetter : MonoBehaviour
 {
+    [SerializeField] private List<EngraveData> _engraveData = new List<EngraveData>();
     public GameObject engraveGameobject;
     public void EngraveSetting()
     {
