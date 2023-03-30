@@ -172,10 +172,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a549850c800602e4da581777e2994baf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dataList:
-  - {fileID: 11400000, guid: 779eee84bcdb83e4fb0198c1821a7bf9, type: 2}
-  - {fileID: 11400000, guid: edec033a03b33784aa85da74da0d0548, type: 2}
-  - {fileID: 11400000, guid: 3bbe9323a999a4b45af2b57b437ca25a, type: 2}
+  _dataObjectList:
+  - {fileID: 935096921418005732, guid: 65dd7c4f4aebd8c43a814dff7342fec9, type: 3}
+  - {fileID: 5606614154686318961, guid: 96b1b5e7350438142a4def4719f1ef52, type: 3}
+  - {fileID: 5937226438308704960, guid: 6bd5ddb8ee9e1084381e23efedcf3027, type: 3}
   engraveGameobject: {fileID: 0}
 --- !u!1 &154705438
 GameObject:
@@ -1357,7 +1357,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1508327.9, y: 671800.75}
+  m_AnchoredPosition: {x: -1939965.4, y: 870430.75}
   m_SizeDelta: {x: 100, y: 700}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1826643863

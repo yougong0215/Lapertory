@@ -5,4 +5,5 @@ using UnityEngine;
 public class EngraveBase : MonoBehaviour
 {
     public string engraveName;
+    public int engraveCount;
 }

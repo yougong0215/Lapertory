@@ -67,7 +67,9 @@ public class PlayerSkillSelecter : MonoBehaviour
         nameText.text = _skillCardData.skillData.skillName;
         coolTime.text = _skillCardData.skillData.skillCoolTime.ToString();
         info.text = _skillCardData.skillData.skillInfo;
-        engraveText.text = _engraveSetter.EngraveSetting();
+        EngraveBase skillBase = _engraveSetter.EngraveSetting().GetComponent<EngraveBase>();
+        Debug.Log(skillBase.engraveName);
+        engraveText.text = skillBase.engraveName;
     }
     private void SkillInfoDetection()
     {
