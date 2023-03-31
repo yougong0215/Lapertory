@@ -14,7 +14,6 @@ public class SkillCard : MonoBehaviour
 
     Image _thisCardImage;
     SkillICardManager _skillICardManager;
-
     public GameObject engraveObject;
     private void Awake()
     {
@@ -31,6 +30,6 @@ public class SkillCard : MonoBehaviour
     }
     public void SelectThisSkill()
     {
-        _skillICardManager.CompleteSelectCard(this.gameObject);
+        _skillICardManager.CompleteSelectCard(this.gameObject, engraveObject);
     }
 }

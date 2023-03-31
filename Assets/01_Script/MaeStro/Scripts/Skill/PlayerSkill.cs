@@ -14,6 +14,13 @@ public class PlayerSkill : MonoBehaviour
     private void Awake()
     {
         _skillKeySelecter = GameObject.Find("SkillKeySelecter").GetComponent<SkillKeySelecter>();
+
+        foreach(GameObject skillObj in playerSkillList)
+        {
+            SkillBase _skillBase = skillObj.GetComponent<SkillBase>();
+            _skillBase.isFirst = true;
+            _skillBase.engraveList.Clear();
+        }
     }
     private void Update()
     {

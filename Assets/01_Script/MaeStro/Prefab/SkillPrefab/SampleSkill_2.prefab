@@ -47,7 +47,7 @@ MonoBehaviour:
   isFirst: 1
   thisSkillData: {fileID: 11400000, guid: b756f69c0da9b324aafe9b748bf2042e, type: 2}
   _upgradeValue: {fileID: 0}
-  level: 1
+  level: 2
   skillKey: 120
   skillName: name_2
   skillCoolTime: 2
@@ -56,3 +56,4 @@ MonoBehaviour:
   producePos: {x: 0, y: 0, z: 10}
   skillEffect: {fileID: 4932088507883938021, guid: 0e5709a7ddb77924090c112cf73bb98a,
     type: 3}
+  engraveList: []

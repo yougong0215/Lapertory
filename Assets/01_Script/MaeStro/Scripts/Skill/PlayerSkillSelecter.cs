@@ -58,8 +58,6 @@ public class PlayerSkillSelecter : MonoBehaviour
         _skillCardData.skillData = _skillData;
         _skillCardData.SetDataValue();
 
-        EngraveSetter engtaveObject = GameObject.Find("EngraveSelecter").GetComponent<EngraveSetter>();
-        
 
         #region  텍스트 받기
         nameText = _skillCard.transform.Find("SkillName").GetComponent<TextMeshProUGUI>();
@@ -71,13 +69,15 @@ public class PlayerSkillSelecter : MonoBehaviour
         nameText.text = _skillCardData.skillData.skillName;
         coolTime.text = _skillCardData.skillData.skillCoolTime.ToString();
         info.text = _skillCardData.skillData.skillInfo;
-        EngraveBase skillBase = _engraveSetter.EngraveSetting().GetComponent<EngraveBase>();
-        Debug.Log(skillBase.engraveName);
-        engraveText.text = skillBase.engraveName;
+        GameObject engraveObject = _engraveSetter.EngraveSetting();
+        EngraveBase engraveBase = engraveObject.GetComponent<EngraveBase>();
+
+        _skillCardData.engraveObject = engraveObject;
+        engraveText.text = engraveBase.engraveName;
     }
     private void SkillInfoDetection()
     {
-        int random = UnityEngine.Random.Range(0, _skillCardDataList.Count);
+        int random = Random.Range(0, _skillCardDataList.Count);
         _skillData = _skillCardDataList[random];
     }
 }

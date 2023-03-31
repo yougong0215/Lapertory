@@ -44,10 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b17ec6235519f438f2f1e16fcf1a54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFirst: 0
+  isFirst: 1
   thisSkillData: {fileID: 11400000, guid: 9f4568eb8fc95d84fbb4d0201ae846f6, type: 2}
   _upgradeValue: {fileID: 0}
-  level: 1
+  level: 3
   skillKey: 99
   skillName: name_3
   skillCoolTime: 3
@@ -56,3 +56,4 @@ MonoBehaviour:
   producePos: {x: 0, y: 0, z: 10}
   skillEffect: {fileID: 4932088507883938021, guid: 0e5709a7ddb77924090c112cf73bb98a,
     type: 3}
+  engraveList: []

@@ -53,6 +53,7 @@ public class SkillSettingUI : MonoBehaviour
                 _contentRect.sizeDelta = new Vector2(_deltaX, 0);
                 _selectCardUI.ValueSetting(_playerSkill.playerCanUseSkillList[i]);
                 _selectCardUI.EngraveSetting(_playerSkill.playerCanUseSkillList[i]);
+
             }
         }
         else

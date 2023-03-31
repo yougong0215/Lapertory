@@ -32,10 +32,21 @@ public class SkillCardUI : MonoBehaviour
         string engraveAreaText = "";
         SkillBase _skillBase_engrave = _skillData.GetComponent<SkillBase>();
 
-        //_skillBase_engrave
-
+        engraveObjectList = _skillBase_engrave.engraveList;
+        Debug.Log(engraveObjectList[0].name);
+        for(int i = 0; i < engraveObjectList.Count; i++)
+        {
+            EngraveBase engraveBase = engraveObjectList[i].GetComponent<EngraveBase>();
+            if(i == 0)
+            {
+                engraveAreaText = engraveBase.engraveName;
+            }
+            else
+            {
+                engraveAreaText += $", {engraveBase.engraveName}";
+            }
+        }
         engraveText.text = engraveAreaText;
-        
     }
 
     public void ValueSetting(GameObject _skilLData)

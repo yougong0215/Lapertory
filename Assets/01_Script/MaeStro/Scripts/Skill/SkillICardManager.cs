@@ -15,7 +15,7 @@ public class SkillICardManager : MonoBehaviour
         _playerSkill = GameObject.Find("Player").GetComponent<PlayerSkill>();
         _skillKeySelecter = GameObject.Find("SkillKeySelecter").GetComponent<SkillKeySelecter>();
     }
-    public void CompleteSelectCard(GameObject selectCard)
+    public void CompleteSelectCard(GameObject selectCard, GameObject engraveObject)
     {
         _skillCard = selectCard.GetComponent<SkillCard>();
         currentSkillCardList.Remove(selectCard);
@@ -36,13 +36,15 @@ public class SkillICardManager : MonoBehaviour
             Debug.Log(_skillObject);
             _playerSkill.playerCanUseSkillList.Add(_skillObject);
         }
-        EventSelectSkillCard(selectCard);
+        
+        EventSelectSkillCard(selectCard, engraveObject);
         EventUnSelectSkillCard(currentSkillCardList);
     }
-    private void EventSelectSkillCard(GameObject selectCard)
+    private void EventSelectSkillCard(GameObject selectCard, GameObject engraveObject)
     {
         SkillBase skillBase = _skillObject.GetComponent<SkillBase>();
         skillBase.SetSkill();
+        skillBase.engraveList.Add(engraveObject);
         StartCoroutine(SelectCardEventCoroutine(selectCard));
     }
     IEnumerator SelectCardEventCoroutine(GameObject selectCard)
