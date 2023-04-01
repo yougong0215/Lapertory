@@ -1357,7 +1357,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1047473.2, y: 458290.34}
+  m_AnchoredPosition: {x: -1588274.4, y: 707786.1}
   m_SizeDelta: {x: 100, y: 700}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1826643863
@@ -1677,7 +1677,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9ecaf298fa61e478d78222d14c21f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skillCardDataList: []
+  _skillCardDataList:
+  - {fileID: 11400000, guid: a8e4baf8f7947a94d9cfe5a688cf2aaa, type: 2}
+  - {fileID: 11400000, guid: b756f69c0da9b324aafe9b748bf2042e, type: 2}
+  - {fileID: 11400000, guid: 9f4568eb8fc95d84fbb4d0201ae846f6, type: 2}
   _skillCardPos:
   - {x: -600, y: -900, z: 0}
   - {x: 0, y: -900, z: 0}
