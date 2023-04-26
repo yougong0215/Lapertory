@@ -28,6 +28,4 @@ public class SkillData : ScriptableObject
     [SerializeField] private int _skillLevel;
     public int skillLevel { get { return _skillLevel; } }
 
-    [SerializeField] private GameObject _skillobject;
-    public GameObject skillObject { get { return _skillobject; } }
 }

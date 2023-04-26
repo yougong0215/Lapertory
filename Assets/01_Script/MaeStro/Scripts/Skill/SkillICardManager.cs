@@ -41,7 +41,6 @@ public class SkillICardManager : MonoBehaviour
     private void EventSelectSkillCard(GameObject selectCard)
     {
         SkillBase skillBase = _skillObject.GetComponent<SkillBase>();
-        
         skillBase.SetSkill();
         StartCoroutine(SelectCardEventCoroutine(selectCard));
     }
